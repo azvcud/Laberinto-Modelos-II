@@ -92,6 +92,7 @@ ruta(A, B, [A, B], Visitados) :-
     conexion(A, B),
     \+ member(B, Visitados).
 
+
 /* Regla para la impresión completa de la lista */
 imprimir_ruta(Lista) :- write('Ruta = '), write(Lista), nl.
 
