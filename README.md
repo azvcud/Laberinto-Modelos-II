@@ -59,10 +59,14 @@ Para más información acerca del funcionamiento del algoritmo, puede consultar 
 Las siguientes reglas fundamentales del programa están escritas como predicado en lógica de primer orden.
     
 1. **Conexión bidireccional de los nodos del laberinto.**
-$$ \forall A \forall B (\text{conexion}(A,B) \leftrightarrow (\text{camino}(A,B) \lor \text{camino}(B,A))) $$
+$$ 
+\forall A \forall B (\text{conexion}(A,B) \leftrightarrow (\text{camino}(A,B) \lor \text{camino}(B,A))) 
+$$
 
 2. **Algoritmo de búsqueda profunda.**
-$$ \forall A \forall B \exists C \left( \left( \text{camino}(A, C) \land (C \neq B) \land \neg \text{member}(C, \text{Visitados}) \right) \rightarrow \text{ruta}(C, B, \text{Ruta}, [C|\text{Visitados}]) \right) $$
+$$ 
+\forall A \forall B \exists C \left( \left( \text{camino}(A, C) \land (C \neq B) \land \neg \text{member}(C, \text{Visitados}) \right) \rightarrow \text{ruta}(C, B, \text{Ruta}, [C|\text{Visitados}]) \right) 
+$$
 
 ### Laberintos
 
