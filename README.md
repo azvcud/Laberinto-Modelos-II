@@ -49,27 +49,26 @@ no informada que recorre todos los nodos de un grafo de manera ordenada. Su func
 nodo a buscar, partiendo de un nodo origen.
 Para más información acerca del funcionamiento del algoritmo, puede consultar en el siguiente video en YouTube:
 
-[![Video de YouTube](https://img.youtube.com/vi/Urx87-NMm6c/0.jpg)](https://www.youtube.com/watch?v=Urx87-NMm6c)
-
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=Urx87-NMm6c" target="_blank">
+    <img src="https://img.youtube.com/vi/Urx87-NMm6c/0.jpg" alt="Video de YouTube" />
+  </a>
+</p>
 
 ### Reglas
 Las siguientes reglas fundamentales del programa están escritas como predicado en lógica de primer orden.
     
 1. **Conexión bidireccional de los nodos del laberinto.**
-    
-    $$
-    \forall A \forall B (\text{conexion}(A,B) \leftrightarrow (\text{camino}(A,B) \lor \text{camino}(B,A)))
-    $$
+$$ \forall A \forall B (\text{conexion}(A,B) \leftrightarrow (\text{camino}(A,B) \lor \text{camino}(B,A))) $$
 
 2. **Algoritmo de búsqueda profunda.**
-
-    $$
-    \forall A \forall B \exists C \left( \left( \text{camino}(A, C) \land (C \neq B) \land \neg \text{member}(C, \text{Visitados}) \right) \rightarrow \text{ruta}(C, B, \text{Ruta}, [C|\text{Visitados}]) \right)
-    $$
+$$ \forall A \forall B \exists C \left( \left( \text{camino}(A, C) \land (C \neq B) \land \neg \text{member}(C, \text{Visitados}) \right) \rightarrow \text{ruta}(C, B, \text{Ruta}, [C|\text{Visitados}]) \right) $$
 
 ### Laberintos
 
-![Laberintos](https://github.com/azvcud/Laberinto-Modelos-II/blob/main/Foto%20de%20laberintos.png)
+<p align="center">
+  <img src="https://github.com/azvcud/Laberinto-Modelos-II/blob/main/Foto%20de%20laberintos.png" alt="Laberintos a solucionar" />
+</p>
 
 ### Uso
 Para poder hacer uso de la verificación, se recomienda primero modificar el archivo *laberinto.pl* de tal forma que se
