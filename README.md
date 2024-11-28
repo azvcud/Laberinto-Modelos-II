@@ -42,8 +42,15 @@ los conceptos de Programación Lógica y la algoritmia necesaria para la soluci�
 
 ## Aspectos del código
 
-### Algoritmo de búsqueda profunda
-Hola
+### Algoritmo usado
+El algoritmo que se ha implementado para la verificación y solución de un laberinto se llama
+**Algoritmo de búsqueda en profundidad** *(También llamado Algoritmo de búsqueda profunda, o su equivalente en inglés Depth-First Search)*, es un algoritmo de búsqueda
+no informada que recorre todos los nodos de un grafo de manera ordenada. Su funcionamiento consiste en expandir todos los nodos de forma recurrente hasta hallar el 
+nodo a buscar, partiendo de un nodo origen.
+Para más información acerca del funcionamiento del algoritmo, puede consultar en el siguiente video en YouTube:
+
+[![Video de YouTube](https://img.youtube.com/vi/Urx87-NMm6c/0.jpg)](https://www.youtube.com/watch?v=Urx87-NMm6c)
+
 
 ### Reglas
 Las siguientes reglas fundamentales del programa están escritas como predicado en lógica de primer orden.
@@ -60,21 +67,26 @@ Las siguientes reglas fundamentales del programa están escritas como predicado 
     \forall A \forall B \exists C \left( \left( \text{camino}(A, C) \land (C \neq B) \land \neg \text{member}(C, \text{Visitados}) \right) \rightarrow \text{ruta}(C, B, \text{Ruta}, [C|\text{Visitados}]) \right)
     $$
 
-### Uso
+### Laberintos
 
+![Laberintos](https://github.com/azvcud/Laberinto-Modelos-II/blob/main/Foto%20de%20laberintos.png)
+
+### Uso
 Para poder hacer uso de la verificación, se recomienda primero modificar el archivo *laberinto.pl* de tal forma que se
 cargue solo un laberinto. Para lo mismo, debe comentarse usando /**/:
 
-    ```prolog
+```prolog
     /* Laberinto no. n*/
     /*
     (...)
     */
+```
 
 Una vez hecho lo anterior, para verificar si el laberinto es solucionable o no:
 
-    ```prolog
+```prolog
     ?- esSolucionable(inicio, fin).
+```
 
 ## Instrucciones de Uso
 
@@ -84,9 +96,10 @@ Para hacer uso del repositorio y el programa:
 Asegúrate de tener SWI-Prolog instalado en tu sistema. Puedes descargarlo desde su [sitio oficial](https://www.swi-prolog.org/).
 
 ### 2. Clonar el repositorio
-    ```bash
+```bash
     git clone https://github.com/azvcud/Laberinto-Modelos-II
+```
 
 ### 3. Ejecutar SWI-Prolog
 Inicie el ejecutable. Dirígase a File > Consult y busque el directorio en donde quedó guardado el repositorio. Seleccione
-*laberinto.pl* para cargar el programa.
+**laberinto.pl** para cargar el programa.
