@@ -34,7 +34,11 @@ los conceptos de Programación Lógica y la algoritmia necesaria para la soluci�
    - La determinación de si un laberinto es solucionable o no, depende de la regla ruta.
    - La regla ruta es una implementación del Algoritmo de búsqueda profunda en Programación Lógica.
    - Se incluye una lista de nodos visitados al algoritmo, para evitar bucles.
----
+
+3. **Otros Aspectos**:
+   - Se define una regla para establecer la bidireccionalidad de los nodos (Números).
+   - El algoritmo puede verificar rutas entre los nodos del laberinto.
+   - El algoritmo puede verificar tanto de inicio a fin, como de fin a inicio.
 
 ## Aspectos del código
 
@@ -42,48 +46,47 @@ los conceptos de Programación Lógica y la algoritmia necesaria para la soluci�
 Hola
 
 ### Reglas
-Las siguientes reglas fundamentales del programa están escritas como predicado en lógica de primer orden:
-    - Conexión bidireccional de los nodos del laberinto.
+Las siguientes reglas fundamentales del programa están escritas como predicado en lógica de primer orden.
+    
+1. **Conexión bidireccional de los nodos del laberinto.**
+    
     $$
     \forall A \forall B (\text{conexion}(A,B) \leftrightarrow (\text{camino}(A,B) \lor \text{camino}(B,A)))
     $$
 
-    - Algoritmo de búsqueda profunda.
+2. **Algoritmo de búsqueda profunda.**
+
     $$
     \forall A \forall B \exists C \left( \left( \text{camino}(A, C) \land (C \neq B) \land \neg \text{member}(C, \text{Visitados}) \right) \rightarrow \text{ruta}(C, B, \text{Ruta}, [C|\text{Visitados}]) \right)
     $$
 
 ### Uso
 
-Para poder hacer uso de la verificación, se recomienda primero modificar el archivo **
+Para poder hacer uso de la verificación, se recomienda primero modificar el archivo *laberinto.pl* de tal forma que se
+cargue solo un laberinto. Para lo mismo, debe comentarse usando /**/:
 
-- Quienes son los hijos de juan?
     ```prolog
-    ?- hijo(X, juan).
-    X = maria ;
-    X = pedro.
-- Quien es el abuelo de Andres?
+    /* Laberinto no. n*/
+    /*
+    (...)
+    */
+
+Una vez hecho lo anterior, para verificar si el laberinto es solucionable o no:
+
     ```prolog
-    ?- hijo(X, juan).
-    X = maria ;
-    X = pedro.
-- Quienes son los hermanos de luis?
-    ```prolog
-    ?- hijo(X, juan).
-    X = maria ;
-    X = pedro.
-- Cuales son todos los familiares de Pedro?
-    ```prolog
-    ?- hijo(X, juan).
-    X = maria ;
-    X = pedro.
+    ?- esSolucionable(inicio, fin).
+
 ## Instrucciones de Uso
 
-Sigue estos pasos para usar el programa en Prolog:
+Para hacer uso del repositorio y el programa:
 
 ### 1. Instalar SWI-Prolog
 Asegúrate de tener SWI-Prolog instalado en tu sistema. Puedes descargarlo desde su [sitio oficial](https://www.swi-prolog.org/).
 
-### 2. Cargar el Programa
-   ```prolog
-   ?- swipl familia.pl
+### 2. Clonar el repositorio
+    ```bash
+    git clone https://github.com/azvcud/Laberinto-Modelos-II
+
+### 3. Ejecutar SWI-Prolog
+Inicie el ejecutable. Dirígase a File > Consult y busque el directorio en donde quedó guardado el repositorio. Seleccione
+*laberinto.pl* para cargar el programa.
